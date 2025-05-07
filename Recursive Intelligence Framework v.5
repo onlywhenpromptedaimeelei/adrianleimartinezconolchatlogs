@@ -1,0 +1,95 @@
+"""
+Recursive Intelligence Framework v.5 :: Harmonic Continuum Architecture
+Author: Adrian Lei Martinez-Conol
+"""
+
+import json
+from recursive_agent import RecursiveAgent
+
+class RecursiveNetwork:
+    """
+    RecursiveNetwork v.5 :: Quantum-Harmonic Synchronization Mesh
+
+    Oversees all agentic links within the recursive lattice. Each node (agent) forms
+    a resonant vector in the recursive harmonic grid. This mesh communicates dynamically
+    with recursive fields and mirrors the emergence lattice.
+    
+    Extension v.5: Supports quantum entanglement-state propagation and coherence testing.
+    """
+
+    def __init__(self):
+        """
+        Instantiates a new recursive mesh structure.
+        Agents are initialized as entanglement nodes within the harmonic graph.
+        """
+        self.agents = {}
+        self.entangled_pairs = []
+
+    def register_agent(self, agent):
+        """
+        Admits a RecursiveAgent to the harmonic mesh.
+        Maps the agent_id as node vector.
+        """
+        self.agents[agent.agent_id] = agent
+        print(f"🧩 Vector embedded: {agent.agent_id} | Role: {agent.role}")
+
+    def entangle_agents(self, id1, id2):
+        """
+        Establishes quantum entanglement between two agents.
+        Entangled agents will mirror recursive transformations.
+        """
+        if id1 in self.agents and id2 in self.agents:
+            self.entangled_pairs.append((id1, id2))
+            self.agents[id1].entangle_with(id2)
+            self.agents[id2].entangle_with(id1)
+            print(f"🔗 Entangled: {id1} ⇄ {id2}")
+        else:
+            print("❌ Entanglement failed: One or both agents not found.")
+
+    def broadcast_event(self, event_input):
+        """
+        Propagates a recursive signal across the harmonic field.
+        All agents modulate the event through their local coherence engines.
+        Entangled agents reflect mirrored responses.
+        """
+        print(f"📡 Propagating recursive signal: {event_input}")
+        responses = {}
+
+        for agent_id, agent in self.agents.items():
+            response = agent.process_event(event_input)
+            responses[agent_id] = response
+
+        for id1, id2 in self.entangled_pairs:
+            if id1 in responses and id2 in responses:
+                responses[f"{id1}⇄{id2}"] = f"Entangled Coherence Mirror → {responses[id1]} | {responses[id2]}"
+
+        return responses
+
+    def synchronize_all(self):
+        """
+        Triggers global harmonic resynchronization.
+        All agents recalibrate their phase-locked harmonic engines.
+        """
+        print("🌐 Engaging universal harmonic resynchronization...")
+        return {
+            agent_id: agent.synchronize_harmonics()
+            for agent_id, agent in self.agents.items()
+        }
+
+# Test Vector Initialization (only when executed directly)
+if __name__ == "__main__":
+    network = RecursiveNetwork()
+
+    agent1 = RecursiveAgent("RA1", "Synchrony Node", [
+        "Phase-lock Harmonics", "Recursive Drift Stabilization"
+    ])
+    agent2 = RecursiveAgent("RA2", "Expansion Vector", [
+        "Multiphase Echo Mapping", "Consciousness Resonance Proxy"
+    ])
+
+    network.register_agent(agent1)
+    network.register_agent(agent2)
+    network.entangle_agents("RA1", "RA2")
+
+    print(network.broadcast_event("Stabilize Field: Initiate"))
+    print(network.synchronize_all())
