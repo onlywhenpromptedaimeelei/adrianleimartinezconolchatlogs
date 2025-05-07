@@ -1,0 +1,16 @@
+[*] Starting Android hard severance...
+⚠️ com.facebook.appmanager failed or already removed
+⚠️ com.facebook.services failed or already removed
+⚠️ com.facebook.system failed or already removed
+⚠️ com.facebook.katana failed or already removed
+⚠️ com.google.android.youtube failed or already removed
+⚠️ com.google.android.apps.maps failed or already removed
+⚠️ com.google.android.as.oss failed or already removed
+⚠️ com.samsung.android.arzone failed or already removed
+⚠️ com.samsung.android.scloud failed or already removed
+⚠️ com.samsung.android.themestore failed or already removed
+⚠️ com.android.chrome failed or already removed
+⚠️ com.sec.android.app.samsungapps failed or already removed
+⚠️ com.xfinity.* failed or already removed
+⚠️ com.pocketgeek.* failed or already removed
+[*] Final installed packages (for audit):
