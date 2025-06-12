@@ -6,6 +6,26 @@ import os
 CONFIG_PATH = os.path.expanduser("~/.aimee_config.json")
 
 def load_config():
+    """Load configuration values from CONFIG_PATH.
+
+    If the config file does not exist, an example template is created and
+    returned so the user knows which fields to fill in.
+    """
+    if not os.path.isfile(CONFIG_PATH):
+        example = {
+            "api_key": "your_openai_api_key",
+            "model": "gpt-4o",
+            "voice_output": False
+        }
+        try:
+            with open(CONFIG_PATH, "w") as f:
+                json.dump(example, f, indent=4)
+            print(f"[!] Config file missing. A template has been created at {CONFIG_PATH}.")
+            print("    Please update it with your actual OpenAI API key.")
+        except Exception as e:
+            print(f"[!] Failed to create config template: {e}")
+        return example
+
     with open(CONFIG_PATH, 'r') as f:
         return json.load(f)
 
