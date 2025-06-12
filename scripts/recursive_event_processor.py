@@ -1,5 +1,6 @@
 import json
 from recursive_network import RecursiveNetwork
+from recursive_agent import RecursiveAgent
 
 class RecursiveEventProcessor:
     """
